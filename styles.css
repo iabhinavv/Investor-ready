@@ -194,7 +194,10 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 .faq p{color:var(--text-2);padding-bottom:16px;margin:0;max-width:70ch}
 
 /* booking */
-.book{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:32px;align-items:start}
+.book{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);column-gap:32px;align-items:start}
+.book-head,.book-act{grid-column:1}
+/* widget spans exactly the button row to the office line */
+.book .calendly-inline-widget{grid-column:2;grid-row:2;align-self:stretch;height:auto;min-height:320px}
 .channels{list-style:none;margin:26px 0 0;padding:4px 20px}
 .channels li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
 .channels li:last-child{border-bottom:0}
@@ -243,8 +246,8 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 /* about page */
 .about-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;padding-top:64px;padding-bottom:56px}
 .about-hero h1{font-size:clamp(46px,5.6vw,84px);line-height:.98}
-.portrait{margin:0}
-.portrait img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r);border:1px solid var(--line-2)}
+.portrait{margin:0 auto;width:50%}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r);border:1px solid var(--line-2)}
 .portrait figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 .sides{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 .sides .panel{padding:26px 28px;display:flex;flex-direction:column;gap:12px}
@@ -268,7 +271,6 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 @media (max-width:980px){
   .about-hero,.sides,.story-wrap,.cta-band{grid-template-columns:minmax(0,1fr)}
   .cards{grid-template-columns:minmax(0,1fr)}
-  .portrait{max-width:420px}
 }
 @media (max-width:640px){
   .about-hero{padding-top:40px;padding-bottom:36px}
@@ -279,3 +281,4 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 .cards.four{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media (max-width:980px){.cards.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.cards.four{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:980px){.book .calendly-inline-widget{grid-column:1;grid-row:auto;height:640px;margin-top:24px}}
