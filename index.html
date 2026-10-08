@@ -292,7 +292,7 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
       <a href="#scorecard">Scorecard</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn primary" href="#book">Book a call</a>
+    <a class="btn primary" href="https://calendly.com/experimentsav/30min">Book a call</a>
   </div>
 </header>
 
@@ -304,7 +304,7 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
       <h1 class="display">Investor-ready in <em>21 days.</em></h1>
       <p class="lede">We clean your cap table, build your financial model, price your round, write your deck and fill your data room. You keep running the company. In three weeks you can say yes when an investor asks for the data room.</p>
       <div class="cta-row">
-        <a class="btn primary lg" href="#book">Book a 30-minute call</a>
+        <a class="btn primary lg" href="https://calendly.com/experimentsav/30min">Book a 30-minute call</a>
         <a class="btn lg" href="#scorecard">Take the free Scorecard</a>
       </div>
       <dl class="hero-stats">
@@ -485,7 +485,7 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
             <li class="panel"><b>Days 4–14 · Build</b><p>We fix the cap table, build the model, price the round, write the deck and assemble the data room. You answer our questions in one 45-minute call a week.</p></li>
             <li class="panel"><b>Days 15–21 · Stress test</b><p>We run two mock investor sessions, close the last gaps and hand everything over.</p></li>
           </ol>
-          <div class="cta-row" style="margin-top:18px"><a class="btn primary lg" href="#book">Book a 30-minute call</a></div>
+          <div class="cta-row" style="margin-top:18px"><a class="btn primary lg" href="https://calendly.com/experimentsav/30min">Book a 30-minute call</a></div>
         </div>
       </div>
     </div>
@@ -517,25 +517,25 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
           <span class="tag">Step 1</span><h3>Investor-Ready Audit</h3>
           <div><span class="amt" data-p="audit">$1,500</span></div>
           <p>60-minute review, written red-flag report and fix plan in 5 business days.</p>
-          <a class="btn" href="#book">Book the Audit</a>
+          <a class="btn" href="https://calendly.com/experimentsav/30min">Book the Audit</a>
         </div>
         <div class="panel plan core">
           <span class="tag amber">Core offer</span><h3>21-Day Investor-Ready Sprint</h3>
           <div><span class="amt" data-p="sprint">$18,000</span></div>
           <p>Files 01–08 done for you, plus four bonuses and the Diligence-Proof Guarantee.</p>
-          <a class="btn primary" href="#book">Book a call</a>
+          <a class="btn primary" href="https://calendly.com/experimentsav/30min">Book a call</a>
         </div>
         <div class="panel plan">
           <span class="tag">During the raise</span><h3>Raise-Ready Partner</h3>
           <div><span class="amt" data-p="partner">$6,000</span> <span class="per">/ month</span></div>
           <p>Outreach system, pitch rehearsal, diligence Q&amp;A and term sheet prep. 3-month minimum.</p>
-          <a class="btn" href="#book">Talk it through</a>
+          <a class="btn" href="https://calendly.com/experimentsav/30min">Talk it through</a>
         </div>
         <div class="panel plan">
           <span class="tag">After close</span><h3>Investor Relations Desk</h3>
           <div><span class="amt" data-p="ir">$1,500</span> <span class="per">/ month</span></div>
           <p>Investor updates, board packs and cap table upkeep. Cancel anytime.</p>
-          <a class="btn" href="#book">Talk it through</a>
+          <a class="btn" href="https://calendly.com/experimentsav/30min">Talk it through</a>
         </div>
       </div>
       <p class="fine">4 Sprints a month, so every founder gets senior attention. Book your Audit before the next start date and the four bonuses are included free.</p>
@@ -601,7 +601,7 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
           <div class="num"><span id="sc">0</span><small>/6</small></div>
           <h3 id="sc-band">Not ready</h3>
           <p id="sc-text">Investors will find problems in the first week. Fix the basics before outreach.</p>
-          <a class="btn primary" href="#book" id="sc-cta">Book a call to review it</a>
+          <a class="btn primary" href="mailto:experimentsav@gmail.com" id="sc-cta">Email us my results</a>
         </div>
       </div>
     </div>
@@ -657,7 +657,7 @@ body::after{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;op
 </div>
 
 <div class="mbar">
-  <a class="btn primary" href="#book">Book a call</a>
+  <a class="btn primary" href="https://calendly.com/experimentsav/30min">Book a call</a>
   <a class="btn" href="https://wa.me/233257319254" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 
@@ -681,19 +681,25 @@ document.getElementById('region').addEventListener('change', function(){
 
 // scorecard
 var bands = [
-  [0,'Not ready','Investors will find problems in the first week. Fix the basics before outreach.','Book a call to review it'],
-  [3,'Close','Gaps will slow diligence and weaken your price. A Sprint closes them in 21 days.','Book a call about the Sprint'],
-  [5,'Ready','Your foundations hold. Book a call to plan the raise itself.','Book a call to plan the raise']
+  [0,'Not ready','Investors will find problems in the first week. Fix the basics before outreach.'],
+  [3,'Close','Gaps will slow diligence and weaken your price. A Sprint closes them in 21 days.'],
+  [5,'Ready','Your foundations hold. Email us your results and we will help you plan the raise.']
 ];
 var boxes = document.querySelectorAll('#checks input');
-boxes.forEach(function(b){ b.addEventListener('change', function(){
-  var n = document.querySelectorAll('#checks input:checked').length, band = bands[0];
-  bands.forEach(function(x){ if (n >= x[0]) band = x; });
-  document.getElementById('sc').textContent = n;
+function score(){
+  var ticked = [], band = bands[0];
+  boxes.forEach(function(b){ if (b.checked) ticked.push('- ' + b.nextElementSibling.firstChild.textContent + ': ' + b.nextElementSibling.lastChild.textContent); });
+  bands.forEach(function(x){ if (ticked.length >= x[0]) band = x; });
+  document.getElementById('sc').textContent = ticked.length;
   document.getElementById('sc-band').textContent = band[1];
   document.getElementById('sc-text').textContent = band[2];
-  document.getElementById('sc-cta').textContent = band[3];
-}); });
+  var body = 'Hello,\r\n\r\nMy Investor-Ready Scorecard result is ' + ticked.length + '/6 (' + band[1] + ').\r\n\r\nStatements I ticked:\r\n' +
+    (ticked.length ? ticked.join('\r\n') : '- None') + '\r\n\r\nPlease get in touch to review it.\r\n';
+  document.getElementById('sc-cta').href = 'mailto:experimentsav@gmail.com?subject=' +
+    encodeURIComponent('Investor-Ready Scorecard: ' + ticked.length + '/6') + '&body=' + encodeURIComponent(body);
+}
+boxes.forEach(function(b){ b.addEventListener('change', score); });
+score();
 </script>
 </body>
 </html>
