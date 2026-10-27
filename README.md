@@ -2,16 +2,33 @@
 
 **Tagline:** Investor ready, funding ready.
 
-A static two-page site selling fundraising-readiness services to pre-seed to Series A founders. There is no backend and no build step. Open `index.html` in a browser, or publish the folder with GitHub Pages.
+A static site selling fundraising-readiness services to pre-seed to Series A founders. There is no backend and no build step. Open `index.html` in a browser, or publish the folder with GitHub Pages.
 
 ## Files
 
 | File | What it is |
 |---|---|
-| `index.html` | Home page: hero, problem, services (folder tabs), the 21-Day Sprint, pricing, guarantee, comparison, Scorecard, FAQ, booking |
-| `about.html` | About the founder: story, banking and startup experience, what the experience means for a raise, what we don't do, call to action |
-| `styles.css` | Shared styles for both pages. The colours and fonts follow Country-Ledger; the folder tabs follow the Mining-Consulting site |
-| `founder.jpg` | Founder photo used on the About page (640 × 640, from the Mining-Consulting site) |
+| `index.html` | Home page: hero, problem and cost of delay, services (folder tabs, each linking to its page), the 21-Day Sprint, who does the work, pricing, guarantee, comparison, Scorecard, FAQ, booking |
+| `investor-ready-sprint.html` | The core offer: value stack, day-by-day plan, guarantee, fit, FAQ |
+| `investor-readiness-audit.html` | File 01: the 5-day Audit |
+| `corporate-structure.html` | File 02: Delaware flip and holding-company review |
+| `cap-table-cleanup.html` | File 03: cap table cleanup, SAFE conversion, option pool |
+| `startup-valuation.html` | File 04: valuation methods and round design |
+| `startup-financial-model.html` | File 05: investor-grade financial model |
+| `pitch-deck-consultant.html` | File 06: pitch deck, written and designed |
+| `investor-data-room.html` | File 07: data room and seed data room checklist |
+| `due-diligence-preparation.html` | File 08: due-diligence pack |
+| `about.html` | About the founder |
+| `styles.css` | Shared styles for every page. The colours and fonts follow Country-Ledger; the folder tabs follow the Mining-Consulting site |
+| `founder.jpg` | Founder photo used on the About page (640 × 640) |
+| `sitemap.xml`, `robots.txt`, `llms.txt` | Search engine and AI-crawler files |
+| `SEO-PLAN.md` | Competitor audit, keyword map, page plan and 12-month roadmap |
+
+Each page has its own title, meta description, canonical URL and JSON-LD schema in the `<head>`. The service pages share the same header, footer, guarantee and call-to-action blocks; if you change one of those, change it on every page.
+
+## Site address (canonical URLs)
+
+Canonical links, Open Graph URLs, schema, `sitemap.xml`, `robots.txt` and `llms.txt` all use `https://iabhinavv.github.io/Investor-ready/`. When you connect a custom domain, search and replace that address across every file.
 
 ## Contact details and links (same as the mining site)
 
@@ -20,11 +37,11 @@ A static two-page site selling fundraising-readiness services to pre-seed to Ser
 - Email: experimentsav@gmail.com
 - Office: 201, Blohum Rd, Accra, Ghana
 
-To change any of these, search and replace across `index.html` and `about.html`.
+To change any of these, search and replace across every `.html` file.
 
 ## How the interactive parts work
 
-- **Market pricing** (home page, Pricing section). The drop-down swaps the four package prices. Prices live in the `P` object in the script at the bottom of `index.html`. The folder-tab prices and the Sprint value table are US only.
+- **Market pricing** (home page, Pricing section). The drop-down swaps the four package prices. Prices live in the `P` object in the script at the bottom of `index.html`. The folder-tab prices, the Sprint value table and the service pages show US prices.
 - **Scorecard** (home page). Visitors tick six statements and their score updates live. The "Email us my results" button opens their email app with a message to experimentsav@gmail.com. The message includes the score and every statement they ticked. Score bands: 0–2 Not ready, 3–4 Close, 5–6 Ready.
 - **Booking**. Every "Book a call" button links straight to Calendly. The home page also has the Calendly scheduler built into the booking section.
 
@@ -37,7 +54,7 @@ To change any of these, search and replace across `index.html` and `about.html`.
 | Raise-Ready Partner (per month) | $6,000 | £4,800 | AED 20,000 | S$7,500 | ₹1,50,000 | $1,500 |
 | Investor Relations Desk (per month) | $1,500 | £1,200 | AED 5,000 | S$2,000 | ₹40,000 | $400 |
 
-Sprint stated value: $42,000 (8 files plus 4 bonuses).
+Sprint stated value: $41,500 (the 8 files at their standalone US prices, $36,500, plus 4 bonuses worth $5,000).
 
 ## Content rules
 
