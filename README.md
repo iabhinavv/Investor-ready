@@ -21,6 +21,8 @@ A static site selling fundraising-readiness services to pre-seed to Series A fou
 | `about.html` | About the founder |
 | `styles.css` | Shared styles for every page. The colours and fonts follow Country-Ledger; the folder tabs follow the Mining-Consulting site |
 | `founder.jpg` | Founder photo used on the About page (640 × 640) |
+| `privacy.html`, `cookies.html`, `terms.html` | Privacy Policy, Cookie Policy, and Terms of Use and Service (includes the full guarantee and pricing terms) |
+| `consent.js` | Cookie banner, Google Consent Mode v2 and Meta Pixel loader. Paste your Google Ads ID and Meta Pixel ID at the top; nothing loads until a visitor opts in |
 | `sitemap.xml`, `robots.txt`, `llms.txt` | Search engine and AI-crawler files |
 | `SEO-PLAN.md` | Competitor audit, keyword map, page plan and 12-month roadmap |
 
@@ -38,6 +40,12 @@ Canonical links, Open Graph URLs, schema, `sitemap.xml`, `robots.txt` and `llms.
 - Office: 201, Blohum Rd, Accra, Ghana
 
 To change any of these, search and replace across every `.html` file.
+
+## Ads tracking (Google Ads and Meta Pixel)
+
+Don't paste Google or Meta tag snippets into the pages. Put the IDs in the three variables at the top of `consent.js` (`GOOGLE_ADS_ID`, optional `GA4_ID`, `META_PIXEL_ID`). The script sets Google Consent Mode defaults to denied, shows the cookie banner, and only loads the tags after the visitor accepts. The "Your privacy choices" footer link reopens the banner. With no IDs set, no banner shows, because the site sets no tracking cookies.
+
+Calls booked in the Calendly widget on the home page are reported automatically, for visitors who accepted advertising: as a Meta `Schedule` event, and as a Google Ads conversion once you paste the conversion label into `BOOKING_CONVERSION_LABEL`. Bookings made on calendly.com itself (from the "Book a call" buttons) happen off this site; track those in Calendly's own Google Ads and Meta Pixel integrations if you need them. If you add or remove a tag, update `cookies.html` and the Privacy Policy.
 
 ## How the interactive parts work
 
